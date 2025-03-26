@@ -38,7 +38,9 @@ export const SubscriptionModalProvider = ({
 
   return (
     <SubscriptionModalContext.Provider value={{ open, setOpen }}>
+      {/* Nesting configuration start */}
       {children}
+      {/* Nesting configuration end */}
       <SubscriptionModal products={products} />
     </SubscriptionModalContext.Provider>
   );
