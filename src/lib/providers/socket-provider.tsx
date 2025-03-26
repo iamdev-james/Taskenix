@@ -46,6 +46,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <SocketContext.Provider value={{ socket, isConnected }}>
+      {/* Socket nest config */}
       {children}
     </SocketContext.Provider>
   );
