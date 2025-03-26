@@ -96,6 +96,7 @@ export const copyBillingDetailsToCustomer = async (
   uuid: string,
   payment_method: Stripe.PaymentMethod
 ) => {
+  // Payment config
   const customer = payment_method.customer as string;
   const { name, phone, address } = payment_method.billing_details;
   if (!name || !phone || !address) return;
@@ -119,6 +120,7 @@ export const manageSubscriptionStatusChange = async (
   customerId: string,
   createAction = false
 ) => {
+  // Stripe block
   try {
     const customerData = await db.query.customers.findFirst({
       where: (c, { eq }) => eq(c.stripeCustomerId, customerId),
